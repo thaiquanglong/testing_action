@@ -1,0 +1,249 @@
+
+*{
+	margin: 0;
+	padding: 0;
+}
+
+
+/*styling for the account.png button/image*/
+.account{
+	cursor: pointer;
+	position: absolute;
+	display: inline-block;
+}
+
+/*styling for the account dropdown menu*/
+.account-content{
+	display: none;
+	position: absolute;
+	background-color: #f1f1f1;
+	min-width: 160px;
+	box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+	z-index:1;
+}
+
+/* Styling for each of the contents in the dropdown menu */
+.account-content a{
+	color: black;
+	padding: 12px 16px;
+	text-decoration: none;
+	display: block
+}
+
+/*Style for when hovering over the contents in the account dropdown menu*/
+.account-content a:hover {background-color: #ddd;} 
+.account:hover .account-content {display:block;}
+.dropdown:hover .account {background-color: #3e8e41;}
+
+/* Styling used for advanced search button in index.html */
+button1{
+	position: absolute;
+	top: 230px;
+	left: 950px;
+	cursor: pointer;
+	color: white;
+	background-color: #e84118;
+	width: 160px;
+	height: 50px;
+	background: #2f3640;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	align-items: center;
+	border-radius: 5px;
+}
+
+/* Styling used for first cover on the homepage*/
+#music1{
+	position: absolute;
+	top: 105px;
+	left: 35px;
+}
+
+#music2{
+	position: absolute;
+	top: 105px;
+	left: 310px;
+}
+
+
+#music3{
+	position: absolute;
+	top: 105px;
+	left: 585px;
+}
+
+#music4{
+	position: absolute;
+	top: 205px;
+	left: 435px;
+}
+
+#music5{
+	position: absolute;
+	top: 205px;
+	left: 580px;
+}
+
+#top-covers{
+	position: absolute;
+	top:340px;
+	left: 40px;
+}
+
+
+/* Styling for the search bar used in homepage (index.html) */
+.search-box{
+	position:absolute;
+	top: 245px;
+	left: 725px;
+	transform: translate(-50%, -30%);
+	background: #2f3640;
+	height: 40px;
+	border-radius: 40px;
+	padding: 10px;
+}
+
+
+.search-btn{
+	position: absolute;
+	color: #e84118;
+	left: 315px;
+	width: 40px;
+	height: 40px;
+	border-radius: 50%;
+	background: #2f3640;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	align-items: center;
+}
+
+#search-txt{
+	border: none;
+	background: none;
+	outline: none;
+	float: left;
+	padding: 0;
+	color: white;
+	font-size: 16px;
+	transition: 0.4s;
+	line-height: 40px;
+	width: 350px;
+}
+
+
+/* Styling for customed upload mp3 button*/
+
+#custom-upload {
+	padding: 10px;
+	color: white;
+	background-color: #009578;
+	border: 1px solid #000;
+	border-radius: 5px;
+	cursor: pointer;
+}
+
+/* Styling for customed upload photo button*/
+#custom-photo {
+	padding: 10px;
+	color: white;
+	background-color: #009578;
+	border: 1px solid #000;
+	border-radius: 5px;
+	cursor: pointer;
+}
+
+#custom-upload:hover {
+	background-color: #00b28f;
+}
+
+/*Styling for the upload-file id that contains the custom upload mp3 button as well as the default upload button */
+#upload-file{
+	position: absolute;
+	top: 500px;
+	left:21px;
+}
+
+
+/*Styling for the upload-photo id that contains the custom upload photo button as well as the default upload button */
+#upload-photo{
+	position: absolute;
+	top: 570px;
+	left:21px;
+}
+
+#custom-photo:hover {
+	background-color: #00b28f;
+}
+
+
+/*Styling for the upload button at the bottom of upload page */
+#uploadCover{
+	position: absolute;
+	top:640px;
+	left: 21px;
+	padding: 20px;
+	color: white;
+	background-color: #009578;
+	border: 1px solid #000;
+	border-radius: 5px;
+	cursor: pointer;
+}
+
+#uploadCover:hover {
+	background-color: #00b28f;
+}
+
+
+/*Styling for the input form used in advanced.html(some of it is overriden there), and used in upload.html */
+.inputInfo input{
+	margin-bottom: 20px;
+	margin-left: 130px;
+}
+
+.inputInfo label{
+	position: absolute;
+}
+
+.inputInfo{
+	position: absolute;
+	top: 280px;
+	left:21px;
+}
+
+
+/*sets background color of website*/
+body{
+
+
+	width: 1440px;
+	height: 818px;
+	background-image: linear-gradient(to right, #AF7AC5 , #5499C7 );
+}
+
+/*sets styling for h1 used in advanced.html and upload.html */
+h1{
+	position: absolute;
+	top: 166px;
+	left: 21px;
+}
+
+#select-gnr{
+	position: absolute;
+	top: 365px;
+	left: 21px;
+}
+
+
+.genres { 
+	position: absolute;
+	top: 365px;
+	left: 150px;
+	background-color: white;
+	border:2px; 
+	solid: #ccc; 
+	width:300px; 
+	height: 100px; 
+	overflow-y: scroll;
+}

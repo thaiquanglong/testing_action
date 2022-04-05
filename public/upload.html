@@ -1,0 +1,120 @@
+
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Upload page</title>
+		<link rel = "stylesheet" href="main.css">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+	
+	</head>
+
+	<body>
+		<h1>Upload a cover: </h1>
+
+		<header>
+			<!--Navigation bar same as the other ones -->
+			<nav>
+				<div id="home" style = "float: left;">
+					<a href = "index.html"><img src="logo.png" alt= "background" width="170" height="170" ></a>
+				</div>
+
+				<div class="account" style="position:absolute; top: 75px; left: 1340px;">
+					<input type="image" id="account" src="account.png" width ="45" height="45"> 
+					
+					<div class = "account-content" style = "right:0;">
+						<a href = "upvotes.html"> My upvotes </a>
+						<a href = "myuploads.html"> My uploads </a>
+						<a href = "bookmarked.html"> My bookmarked songs </a>
+						<a href = "upload.html"> Upload a cover </a>
+						<a href ="#"> Sign out </a>
+					</div>
+				</div>
+			</nav>
+		</header>
+
+		<!--form for users to enter information, refer to main.css for more -->
+		<form id ="coverInfo">
+			<div class="inputInfo">
+				<label for="song">Enter song name:</label>
+				<input type="text" id="song"/></br>
+				<label for="artist">Original artist:</label>  
+				<input type="text" id="artist"/></br>
+
+			</div>
+		</form> 
+
+		<p id="select-gnr"> Select genre(s): </p>
+
+		<div class="genres">
+			<input type="checkbox" /> Alternative Rap<br />
+			<input type="checkbox" /> Alternative Rock<br />
+			<input type="checkbox" /> Acid Techno <br />
+			<input type="checkbox" /> Breakcore<br />
+			<input type="checkbox" /> Contemporary Blues<br />
+			<input type="checkbox" /> Contemporary R&B <br />
+			<input type="checkbox" /> Gangsta Rap<br />
+			<input type="checkbox" /> Minimal House<br />
+			<input type="checkbox" /> Space Age Pop<br />
+			<input type="checkbox" /> Underground Rap <br />
+		</div>
+
+		<!-- In order to have our custom-functional upload file button we need to create a default button and hide it, and create a custom button that will have the same functionality as the hidden default one, look at JavaScript below for more -->
+		<!--refer to main.css for more on the custom buttons style-->
+		<div id="upload-file">
+			<input type="file" id="real-file"  hidden="hidden" /> <!--This creates a default button and hides it-->
+			<button  onclick="active()" type = "button" id="custom-upload">UPLOAD MP3</button> <!--This creates a custom button -->
+			<span id="custom-text"> No file chosen, yet</span> <!--This is custom text-->
+		</div>
+
+		<div id="upload-photo">
+
+			<input type="file" id="real-photo"  hidden="hidden" />
+			<button  onclick="active()" type = "button" id="custom-photo">UPLOAD PHOTO</button>
+			<span id="custom-photo-text"> No file chosen, yet</span>	
+
+		</div>
+
+		
+		<button type = "button" id="uploadCover">UPLOAD COVER</button> <!--Creates the upload button at the bottom of upload.html -->
+		
+
+		<!--JavaScript code-->
+		<script type="text/javascript">
+			const realFileBtn =document.getElementById("real-file"); //realFileBtn is like the variable for the real-file button above (the default button)
+			const customBtn = document.getElementById("custom-upload"); //customBtn is like the variable for the custom-upload button above (our custom button)
+			const customTxt = document.getElementById("custom-text"); //customTxt is like the variable for the custom-text button above
+
+			const realPhoto =document.getElementById("real-photo");
+			const customPhoto = document.getElementById("custom-photo");
+			const customPhotoTxt = document.getElementById("custom-photo-text");
+
+
+			customBtn.addEventListener("click", function(){ //adds an event listener for when the customBtn (our custom button) is clicked, the realFileBtn(the default button which we hid) will be clicked
+				realFileBtn.click();
+			});
+
+			customPhoto.addEventListener("click", function(){
+				realPhoto.click();
+			});
+
+
+			//This part changes the text which we set it to be No file chosen, yet.
+			realFileBtn.addEventListener("change", function() { //adds event listener for when the value of realFileBtn changes
+				if(realFileBtn.value){   //if the value changes
+					customTxt.innerHTML = realFileBtn.value.match(/[\/\\]([\w\d\s\.\-\(\)]+)$/)[1]; //the customTxt will now be the name of the file
+				} else { //otherwise the name of the file will be the same
+					customTxt.innerHTML ="No file chosen, yet";
+				}
+			});	
+
+			realPhoto.addEventListener("change", function() {
+				if(realPhoto.value){
+					customPhotoTxt.innerHTML = realPhoto.value.match(/[\/\\]([\w\d\s\.\-\(\)]+)$/)[1];
+				} else {
+					customPhotoTxt.innerHTML ="No file chosen, yet";
+				}
+			});	
+
+		</script>
+	</body>
+</html>

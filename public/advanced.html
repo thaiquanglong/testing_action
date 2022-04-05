@@ -1,0 +1,142 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+	<head>
+		<title>Prototype 1 </title>
+		<link rel = "stylesheet" href="main.css">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+		<!--Some CSS code is added here but also uses css code from main.css-->
+		<style type="text/css">
+
+			#directions{
+				position: absolute;
+				top:250px;
+				left: 21px;
+			}
+
+			#page-name{
+				position: absolute;
+				top: 160px;
+				left: 21px;
+			}
+
+			/*This is the styling for the form where user enters information, it overrides the styling in main.css*/
+			.inputInfo input{
+				margin-bottom: 40px;
+				margin-left: 130px;
+
+			}
+
+			.genres { 
+				position: absolute;
+				top: 380px;
+				left: 150px;
+				background-color: white;
+				border:2px; 
+				solid: #ccc; 
+				width:300px; 
+				height: 100px; 
+				overflow-y: scroll;
+			}
+
+			#acct{
+				position: absolute;
+				top: 0px;
+				left: 125px;
+			}
+
+			#acct-txt{
+				position: absolute;
+				top: 520px;
+				left: 21px;
+			}
+
+			#select-gnr{
+				position: absolute;
+				top: 380px;
+				left:21px;
+			}
+
+			#adv-srch{
+				position: absolute;
+				top: 600px;
+				left: 145px;
+
+			}
+
+		</style>
+	
+
+	</head>
+
+	<body>
+		<header>
+			<!--Navigation bar same as other pages -->
+			<nav>
+				<div id="home" style = "float: left;">
+					<a href = "index.html"><img src="logo.png" alt= "background" width="170" height="170" ></a>
+				</div>
+
+				<div class="account" style="position:absolute; top: 75px; left: 1340px;">
+					<input type="image" id="account" src="account.png" width ="45" height="45"> 
+					
+					<div class = "account-content" style = "right:0;">
+						<a href = "upvotes.html"> My upvotes </a>
+						<a href = "myuploads.html"> My uploads </a>
+						<a href = "bookmarked.html"> My bookmarked songs </a>
+						<a href = "upload.html"> Upload a cover </a>
+						<a href ="#"> Sign out </a>
+					</div>
+				</div>
+			</nav>
+		</header>
+
+
+		<h1 id="page-name">Advanced Search </h1>	
+		<p id="directions">Fill in at least one of the fields below:</p>		
+
+		<!--Form for users to enter input -->
+		<form id ="coverInfo">
+			<div class="inputInfo">
+
+				<label for="song">Enter song name:</label>
+				<input type="text" id="song"/></br>
+				<label for="artist">Original artist:</label>  
+				<input type="text" id="artist"/></br>
+		
+			</div>
+		</form> 
+
+		<p id="select-gnr">Select genre(s):</p>
+
+		<div class="genres">
+			<input type="checkbox" /> Alternative Rap<br />
+			<input type="checkbox" /> Alternative Rock<br />
+			<input type="checkbox" /> Acid Techno <br />
+			<input type="checkbox" /> Breakcore<br />
+			<input type="checkbox" /> Contemporary Blues<br />
+			<input type="checkbox" /> Contemporary R&B <br />
+			<input type="checkbox" /> Gangsta Rap<br />
+			<input type="checkbox" /> Minimal House<br />
+			<input type="checkbox" /> Space Age Pop<br />
+			<input type="checkbox" /> Underground Rap <br />
+		</div>
+
+
+		<p id="acct-txt">Account:</label>  
+		<input type="text" id="acct"/></br> 
+
+		<div id="adv-srch">
+			<input type="submit" value="Search">
+
+		</div>
+
+
+			
+	
+
+	</body>
+
+
+</html>

@@ -1,15 +1,188 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <script defer src="bundle.js"></script>
-</head>
-<body>
-    <h1>What day is it? 😕</h1>
-    <h2>Today is <span id="day">?</span></h2>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+	<head>
+		<title>Prototype 1 </title>
+		<link rel = "stylesheet" href="main.css">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <img src="pug.jpg" width="500" alt="pug">
-</body>
+		<style type="text/css">
+	        #playlist{
+	            list-style: none;
+					position: absolute;
+					top: 315px;
+					display: block;
+				  	width: 1430px;
+				  	height: 210px;
+				  	border: none;
+				  	padding: 0px 0px;
+				  	font-size: 16px;
+				  	cursor: pointer;
+				  	text-align: left;
+				  	text-align: top;
+	        }
+	        #playlist li a{
+	            color:black;
+	            text-decoration: none;
+				position:absolute;
+	        }
+	        #playlist .current-song a{
+	            color:blue;
+	        }
+
+			/*this is the styling for the search result covers/buttons*/
+			.results .result1 {
+				
+			  	background-color:  #FDF5E6;
+			}
+
+
+			/*styling for like button*/
+			#like{
+				position: absolute;
+				left: 25%;
+			}
+		
+			#dislike{
+				position: absolute;
+				left: 30%;
+
+			}
+			/*styling for report button*/
+			#report{
+				position: relative;
+			}
+			/*styling for bookmarked button*/
+			#bookmarked{
+				position: absolute;
+				left: 0%;
+			}
+			/*styling for audio player*/
+			#audioPlayer{
+				position: absolute;
+				bottom: -260px;
+				width: 1400px;
+			}
+
+		</style>
+	</head>
+
+	<body>
+		<header>
+			<!--This will be the navigation bar-->
+			<nav>
+
+				<!--This makes the logo picture into a button. The logo will be placed at the top and will lead to homepage when clicked on.-->
+				<div id="home" style = "float: left;">
+					<a href = "index.html"><img src="logo.png" alt= "background" width="170px" height="170px" ></a>
+				</div>
+
+				<div class="account" style="position:absolute; top: 75px; left: 1340px;">
+					<input type="image" id="account" src="account.png" width ="45px" height="45px"> 
+						
+						<!-- This is the content of the dropdown menu -->
+					<div class = "account-content" style = "right:0px;">
+						<a href = "upvotes.html"> My upvotes </a>
+						<a href = "myuploads.html"> My uploads </a>
+						<a href = "bookmarked.html"> My bookmarked songs </a>
+						<a href = "upload.html"> Upload a cover </a>
+						<a href ="#"> Sign out </a>
+					</div>
+				</div>
+
+
+
+
+		
+			</nav>
+
+		</header>
+
+
+
+			<!--This creates a search box where the user can eneter info and use the search.png icon that leads to the search page. Look at search-box, search-txt, and search-btn in main.css for more -->
+			<div class = "search-box">
+				<input id = "search-txt" type ="text" name ="" placeholder = "   Type to search">
+				<a class="search-btn" href="search.html">
+					<input type="image" id="search" src="search.png" width ="30" height="30">
+				</a>
+			</div>
+
+
+			<!--This creates the advanced search button that leads to the advanced page, look at button1 in main.css for the formatting-->
+			<a href="advanced.html">
+				<button1 id= "advanced-search">Advanced search</button1>
+			</a>
+
+
+			<div id="top-covers">
+				<p>Top Covers</p>
+			</div>
+
+			<!-- This turns the music2.png files into buttons which will be the top covers on the homepage, look at music1, music2..... in main.css for more -->
+			<div class= "music">
+
+				<div id="music4">
+					<input type="image" id="music4" src="music2.png" width ="232" height="160" >
+				</div>
+
+				<div id="music5">
+					<input type="image" id="music5" src="music2.png" width ="232" height="160" >
+				</div>
+					<ul id="playlist">
+        <li>
+			<button type="button" id="music1"> <!--This is just a really wide block button -->
+				<a href="Jim Yosef & Anna Yvette - Courage [NCS Release].mp3">
+				<img src="Courage.jpg" alt= "background" width="222" height="150"> <!--Inside this button there will be an image -->
+				Jim Yosef & Anna Yvette - Courage [NCS Release]
+				</a>
+			</button>
+		</li>
+		<li>
+			<button type="button" id="music2"> <!--This is just a really wide block button -->
+				<a href="Jordan Schor & Harley Bird - Home [NCS Release].mp3">
+				<img src="Home.jpg" alt= "background" width="222" height="150"> <!--Inside this button there will be an image -->
+				Jordan Schor & Harley Bird - Home [NCS Release]
+				</a>
+			</button>
+		</li>
+		<li>
+			<button type="button" id="music3"> <!--This is just a really wide block button -->
+				<a href="Voicians - Seconds [NCS Release].mp3">
+				<img src="Seconds.jpg" alt= "background" width="222" height="150"> <!--Inside this button there will be an image -->
+				Voicians - Seconds [NCS Release].mp3
+				</a>
+
+			</button>
+		</li>
+		<li>
+				<audio src="" controls id="audioPlayer">
+        Sorry, your browser doesn't support html5!
+				</audio>
+		</li>
+    </ul>
+
+
+			</div>
+	<script src="https://code.jquery.com/jquery-2.2.0.js"></script>
+    <script src="audioPlayer.js"></script>
+    <script>
+        // loads the audio player
+        audioPlayer();
+    </script>	
+			<script type="text/javascript">
+				var input = document.getElementById("search-txt");
+				input.addEventListener("keyup", function(event) {
+		  			if (event.keyCode === 13) {
+		   				event.preventDefault();
+		   				document.getElementById("search").click();
+		  			}
+				});
+			</script>
+
+			
+	
+
+	</body>
+
+
 </html>
