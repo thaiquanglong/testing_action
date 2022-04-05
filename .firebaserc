@@ -1,5 +1,7 @@
 {
   "projects": {
-    "default": "fireship-lessons"
-  }
+    "default": "testing-action-553fd",
+    "testing-action": "testing-action-553fd"
+  },
+  "targets": {}
 }
